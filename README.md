@@ -14,9 +14,9 @@ Usb to ttl serial converter
 4- output of the system will be "Elapsed time 'hours':'minutes':'seconds' " .
 
 4-Peripherals :
-1- USART2 
-2- RCC 
-3- GPIO 
+1- USART2 .
+2- RCC .
+3- GPIO .
 
 
 
