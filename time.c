@@ -16,6 +16,13 @@ void time_update(void)
 {
 	static uint16_t TIME_COUNTER_MS  =0 ; 
 	
+	TIME_COUNTER_MS += OS_TICK_MS  ;
+	if(TIME_COUNTER_MS != TIME_TASK_PERIOD_MS)
+	{
+		return ;
+	}
+	TIME_COUNTER_MS = 0; 
+	
 	switch(time_state)
 	{
 		case TIME_STOP :
@@ -25,12 +32,6 @@ void time_update(void)
 		}
 		case TIME_START :
 		{
-			TIME_COUNTER_MS += OS_TICK_MS ; 
-			if(TIME_COUNTER_MS != TIME_TASK_PERIOD_MS)
-			{
-				return ; 
-			}
-			TIME_COUNTER_MS = 0; 
 			time.seconds ++ ;
 			if(time.seconds == 60)
 			{
