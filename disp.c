@@ -34,6 +34,13 @@ void disp_update(void)
 	static uint16_t DISP_COUNTER_MS = DISP_TASK_PHASE_5_MS ;
 	uint8_t current_index = 0  ;
 	
+	DISP_COUNTER_MS += OS_TICK_MS ;
+	if(DISP_COUNTER_MS != DISP_TASK_PERIOD_MS)
+	{
+		return  ; 
+	}
+	DISP_COUNTER_MS = 0;
+	
 	switch(disp_state)
 	{
 		case DISP_IDLE :
@@ -43,12 +50,6 @@ void disp_update(void)
 		}
 		case DISP_NORMAL :
 		{
-			DISP_COUNTER_MS += OS_TICK_MS ; 
-			if(DISP_COUNTER_MS != DISP_TASK_PERIOD_MS)
-			{
-				return ;
-			}
-			DISP_COUNTER_MS = 0;
 			time = time_get_value(); 
 			while("\rElapsed time "[current_index] != '\0')
 			{
@@ -78,6 +79,7 @@ void disp_update(void)
 		default :
 		{
 			/*Should not be here !*/
+			break;
 		}
 	}
 	
