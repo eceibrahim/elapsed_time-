@@ -1,14 +1,18 @@
 Elapsed time project :
 
-1-Software Tools :
+Software Tools :
 
-Keil uVersion5 "IDE"
+1-Keil uVersion5 "IDE"
 
-2-Hardware :
+
+Hardware :
 
 1-Stm32f103c8   "blue pill" .
-2-Usb to ttl serial converter. 
-3-System description :
+
+2-Usb to ttl serial converter.
+
+
+System description :
 
 1- The system is blind , has no reference to the system environment .                                                                                          
 2- One interrupt system .                                                 
@@ -17,7 +21,8 @@ Keil uVersion5 "IDE"
 
 4- output of the system will be "Elapsed time 'hours':'minutes':'seconds' " .
 
-4-Peripherals :
+
+Peripherals :
 
 1- USART2 
 
