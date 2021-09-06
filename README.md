@@ -7,9 +7,7 @@ Keil uVersion5 "IDE"
 2-Hardware :
 
 1-Stm32f103c8   "blue pill" .
-
 2-Usb to ttl serial converter. 
-
 3-System description :
 
 1- The system is blind , has no reference to the system environment .                                                                                          
