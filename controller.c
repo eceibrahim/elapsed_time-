@@ -1,6 +1,7 @@
 #include "controller.h"
 #include "time.h"
 #include "disp.h"
+#include "os.h"
 #include "serial.h"
 
 static etime_state_t etime_state ; 
@@ -12,6 +13,15 @@ void etime_init(void)
 
 void etime_update(void)
 {
+	static uint16_t ETIME_COUNTER_MS  = 0; 
+	ETIME_COUNTER_MS +=OS_TICK_MS ; 
+	
+	if(ETIME_COUNTER_MS != ETIME_TASK_PERIOD_MS )
+	{
+		return ;
+	}
+	ETIME_COUNTER_MS =0; 
+	
 	switch(etime_state)
 	{
 		case ETIME_NORMAL :
