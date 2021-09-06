@@ -90,6 +90,7 @@ void serial_update(void)
 					serial_state =SERIAL_FAULT ; 
 				}
 		  }
+			break ;
 		}
 		case SERIAL_FAULT :
 		{
