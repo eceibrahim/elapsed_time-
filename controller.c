@@ -14,8 +14,8 @@ void etime_init(void)
 void etime_update(void)
 {
 	static uint16_t ETIME_COUNTER_MS  = 0; 
-	ETIME_COUNTER_MS +=OS_TICK_MS ; 
 	
+	ETIME_COUNTER_MS +=OS_TICK_MS ; 
 	if(ETIME_COUNTER_MS != ETIME_TASK_PERIOD_MS )
 	{
 		return ;
